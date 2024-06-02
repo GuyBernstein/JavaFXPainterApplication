@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PainterController">
+   <center>
+      <Pane fx:id="drawingAreaPane" onMousePressed="#drawingAreaMousePressed" onMouseReleased="#drawingAreaMouseReleased" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton fx:id="blackRadioButton" mnemonicParsing="false" onAction="#colorRadioButtonSelected" selected="true" text="black">
+               <toggleGroup>
+                  <ToggleGroup fx:id="colorToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="redRadioButton" mnemonicParsing="false" onAction="#colorRadioButtonSelected" text="red" toggleGroup="$colorToggleGroup" />
+            <RadioButton fx:id="greenRadioButton" mnemonicParsing="false" onAction="#colorRadioButtonSelected" text="green" toggleGroup="$colorToggleGroup" />
+            <RadioButton fx:id="blueRadioButton" mnemonicParsing="false" onAction="#colorRadioButtonSelected" text="blue" toggleGroup="$colorToggleGroup" />
+            <RadioButton fx:id="opaqueRadioButton" mnemonicParsing="false" onAction="#opacityRadioButtonSelected" selected="true" text="opaque">
+               <toggleGroup>
+                  <ToggleGroup fx:id="opacityToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="transparentRadioButton" mnemonicParsing="false" onAction="#opacityRadioButtonSelected" text="transparent" toggleGroup="$opacityToggleGroup" />
+            <RadioButton fx:id="rectangleRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" selected="true" text="rectangle">
+               <toggleGroup>
+                  <ToggleGroup fx:id="shapeToggleGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="circleRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" text="circle" toggleGroup="$shapeToggleGroup" />
+            <RadioButton fx:id="lineRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" text="line" toggleGroup="$shapeToggleGroup" />
+            <Button mnemonicParsing="false" onAction="#undoButtonPressed" text="undo" />
+            <Button mnemonicParsing="false" onAction="#clearButtonPressed" text="clear" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
